@@ -8,10 +8,8 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/redactor_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/base_btn.visibility"
         android:text="@string/redactor"
-        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/settings_btn"
         app:layout_constraintEnd_toStartOf="@+id/reader_btn"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,10 +17,8 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/reader_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/base_btn.visibility"
         android:text="@string/reader"
-        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/settings_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/redactor_btn"
@@ -30,8 +26,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/settings_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/base_btn"
         android:text="@string/settings"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,8 +35,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/create_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/base_btn"
         android:text="@string/create_file"
         app:layout_constraintBottom_toTopOf="@+id/settings_btn"
         app:layout_constraintEnd_toEndOf="parent"

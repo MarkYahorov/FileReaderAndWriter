@@ -8,8 +8,7 @@
 
     <RadioGroup
         android:id="@+id/set_size_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/base_btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/set_color_text"
         app:layout_constraintStart_toStartOf="parent"
@@ -17,28 +16,23 @@
 
         <androidx.appcompat.widget.AppCompatRadioButton
             android:id="@+id/radioButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:checked="true"
+            style="@style/base_radio_btn.is_checked"
             android:text="@string/_20sp" />
 
         <androidx.appcompat.widget.AppCompatRadioButton
             android:id="@+id/radioButton2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/base_radio_btn"
             android:text="@string/_30sp" />
 
         <androidx.appcompat.widget.AppCompatRadioButton
             android:id="@+id/radioButton3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/base_radio_btn"
             android:text="@string/_40sp" />
     </RadioGroup>
 
     <RadioGroup
         android:id="@+id/set_color_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/base_btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/set_size_text"
@@ -46,21 +40,17 @@
 
         <androidx.appcompat.widget.AppCompatRadioButton
             android:id="@+id/radioButton4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/red"
-            android:checked="true"/>
+            style="@style/base_radio_btn.is_checked"
+            android:text="@string/red" />
 
         <androidx.appcompat.widget.AppCompatRadioButton
             android:id="@+id/radioButton5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/base_radio_btn"
             android:text="@string/blue" />
 
         <androidx.appcompat.widget.AppCompatRadioButton
             android:id="@+id/radioButton6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/base_radio_btn"
             android:text="@string/green" />
     </RadioGroup>
 </androidx.constraintlayout.widget.ConstraintLayout>

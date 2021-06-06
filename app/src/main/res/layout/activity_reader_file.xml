@@ -8,9 +8,7 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/reader_text"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:textSize="@dimen/text_size"
+        style="@style/main_input_or_reading_field"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
