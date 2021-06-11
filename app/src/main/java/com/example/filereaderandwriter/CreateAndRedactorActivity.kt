@@ -36,21 +36,23 @@ class CreateAndRedactorActivity : AppCompatActivity() {
     }
 
     private fun showFile(){
-        if (getDir("data.txt", MODE_PRIVATE).exists()){
-            try {
-                val inputStream: FileInputStream = openFileInput(file.toString())
-                val inputReader = InputStreamReader(inputStream)
-                val buffer = BufferedReader(inputReader)
-                val stringBuffer = StringBuffer()
-                buffer.forEachLine {
-                    stringBuffer.append("$it\n")
+        filesDir.listFiles().forEach {
+            if (file.name == it.name) {
+                try {
+                    val inputStream: FileInputStream = openFileInput(file.toString())
+                    val inputReader = InputStreamReader(inputStream)
+                    val buffer = BufferedReader(inputReader)
+                    val stringBuffer = StringBuffer()
+                    buffer.forEachLine {
+                        stringBuffer.append("$it\n")
+                    }
+                    createAndRedactorText.setText(stringBuffer.toString())
+                    inputStream.close()
+                } catch (e: FileNotFoundException) {
+                    Toast.makeText(this, getDir("data.txt", MODE_PRIVATE).name, Toast.LENGTH_LONG).show()
+                } catch (e: IOException) {
+                    Toast.makeText(this, "IO", Toast.LENGTH_LONG).show()
                 }
-                createAndRedactorText.setText(stringBuffer.toString())
-                inputStream.close()
-            }catch (e:FileNotFoundException){
-                Toast.makeText(this, getDir("data.txt", MODE_PRIVATE).name, Toast.LENGTH_LONG).show()
-            } catch (e: IOException) {
-                Toast.makeText(this, "IO", Toast.LENGTH_LONG).show()
             }
         }
     }

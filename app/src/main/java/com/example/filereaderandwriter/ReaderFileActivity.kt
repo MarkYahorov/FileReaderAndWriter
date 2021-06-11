@@ -34,25 +34,27 @@ class ReaderFileActivity : AppCompatActivity() {
     }
 
     private fun readText(){
-        if (getDir("data.txt", MODE_PRIVATE).exists()) {
-            try {
-                val inputStream: FileInputStream = openFileInput("data.txt")
-                val inputReader = InputStreamReader(inputStream)
-                val buffer = BufferedReader(inputReader)
-                val stringBuffer = StringBuffer()
-                var count = 0
-                buffer.forEachLine {
-                    val numberOfLine = count++
-                    stringBuffer.append("$numberOfLine $it\n")
+        filesDir.listFiles().forEach {
+            if ("data.txt" == it.name) {
+                try {
+                    val inputStream: FileInputStream = openFileInput(it.name)
+                    val inputReader = InputStreamReader(inputStream)
+                    val buffer = BufferedReader(inputReader)
+                    val stringBuffer = StringBuffer()
+                    var count = 0
+                    buffer.forEachLine {
+                        val numberOfLine = count++
+                        stringBuffer.append("$numberOfLine $it\n")
+                    }
+                    readFileText.text = stringBuffer.toString()
+                    inputStream.close()
+                } catch (e: FileNotFoundException) {
+                    Toast.makeText(this, getDir("data.txt", MODE_PRIVATE).name, Toast.LENGTH_LONG).show()
+                } catch (e: IOException) {
+                    Toast.makeText(this, "IO", Toast.LENGTH_LONG).show()
+                } catch (e: Exception) {
+                    Toast.makeText(this, "${openFileInput(getDir("data.txt", MODE_PRIVATE).toString())}", Toast.LENGTH_LONG).show()
                 }
-                readFileText.text = stringBuffer.toString()
-                inputStream.close()
-            }catch (e:FileNotFoundException){
-                Toast.makeText(this, getDir("data.txt", MODE_PRIVATE).name, Toast.LENGTH_LONG).show()
-            } catch (e: IOException){
-                Toast.makeText(this, "IO", Toast.LENGTH_LONG).show()
-            }catch (e: Exception){
-                Toast.makeText(this, "${openFileInput(getDir("data.txt", MODE_PRIVATE).toString())}", Toast.LENGTH_LONG).show()
             }
         }
     }

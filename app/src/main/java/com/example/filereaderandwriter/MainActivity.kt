@@ -7,6 +7,7 @@ import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.widget.Button
 import android.widget.Toast
+import java.io.File
 import java.io.FileNotFoundException
 import java.io.IOException
 
@@ -67,10 +68,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun setBtnVisibility(){
         Toast.makeText(this, "${getDir("data.txt", MODE_PRIVATE)}", Toast.LENGTH_LONG).show()
-        if (getDir("data.txt", MODE_PRIVATE).exists()){
-            redactBtn.visibility = VISIBLE
-            readBtn.visibility = VISIBLE
-            createBtn.visibility = GONE
+        filesDir.listFiles().forEach {
+            if ("data.txt" == it.name){
+                redactBtn.visibility = VISIBLE
+                readBtn.visibility = VISIBLE
+                createBtn.visibility = GONE
+            }
         }
     }
 
