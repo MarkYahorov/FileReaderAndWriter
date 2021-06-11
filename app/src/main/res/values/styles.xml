@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="main_input_or_reading_field">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:gravity">start|top</item>
+        <item name="android:textSize">@dimen/text_size</item>
+        <item name="android:inputType">textMultiLine</item>
+    </style>
+
+    <style name="base_btn">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="base_btn.visibility">
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="base_radio_btn">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="base_radio_btn.is_checked">
+        <item name="android:checked">true</item>
+    </style>
+</resources>
